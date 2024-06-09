@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div class="bar">
+            <p>Pirate Place</p>
+        </div>
+        <style>
+              body, p {
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Style for the bar */
+            .bar {
+                background-color: #ff5e00; /* Blue color, you can change it to any color you prefer */
+                height: 30px; /* Height of the bar */
+                width: 100%; /* Full width */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Style for the text inside the bar */
+            .bar p {
+                color: #ffffff; /* White color for text */
+                font-size: 16px; /* Font size */
+                font-weight: bold; /* Bold font weight */
+            }
+        </style>
+        <meta charset="utf-8">
+        <title>Login + Firebase Database</title>
+         <!-- Cool Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="pirat.jpg">
+        <!-- Our stylesheet -->
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div id="content_container">
+            <div id="form_container">
+                <div id="form_header_container">
+                    <h4 align="center">
+                    <p id="form_header"> <img class="image2x no-lazyload" src="pirat.jpg" title="pirate place" alt="The pirate place" width="275" height="319"></p>
+                </div>
+
+                <div id="form_content_container">
+                    <div id="form_content_inner_container">
+                        <p align="center">
+                        <input type="text" id="full_name" placeholder="Full name">
+                    </p>  
+                        <p align="center">
+                        <input type="email" id="email" placeholder="Email">
+                    </p>
+                        <p align="center">
+                        <input type="password" id="password" placeholder="New Password">
+                    </p>
+                        <p align="center">
+                        <input type="text" id="favourite_song" placeholder="numper">
+                    </p>
+                     
+                    <p align="center">
+                        <input type="text" id="milk_before_cereal" placeholder="pirate place( Yes | No )">
+                    </p>
+                
+                    
+                    <div id="button_container" align="center">
+                            <button onclick="login()">Login</button>
+                            <button onclick="register()">Register</button>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="index.js"></script>
+ <p align="center">by mr robot <button><a href="https://t.me/robot_side002">telegram</a></button></p>
+</html>
