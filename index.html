@@ -1,203 +1,413 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block;}
-body{background:#fff;margin:10px;font:0.7em/1.3em Verdana, Arial, Helvetica, sans-serif;}
-.sp{background:url('../img/latest.png') no-repeat;display:inline-block;height:12px;width:11px;margin:0 0 -3px 0;}
-.dl-torrent{background-position:-36px -111px;margin:0 3px -3px 0;}
-.dl-magnet{background-position:-46px -111px;margin:0 3px -1px 0;width:13px;}
-.vip{background-position:-13px -99px;}
-.trus{background-position:-1px -99px;}
-.help{background-position:-25px -99px;}
-.admin, .mod, .smod{height:11px;width:28px;}
-.admin{background-position:0 -87px;}
-.smod{background-position:-27px -87px;}
-.mod{background-position:-54px -87px;}
-.twitter{background-position:-44px -123px;height:16px;width:16px;}
-#write_comment{background-position:-25px -110px;height:10px;margin:0 4px -1px 0;}
-#tools{max-width:728px;margin:1em auto -1em auto;text-align:right;line-height:30px;clear:both;overflow:hidden;}
-#tools form{float:left;background:#F6F1EE;padding:0px 5px;}
-#delete a{color:#f00;}
-#check a{color:#000;}
-#check a:hover, #checked{color:#090;}
-a, a:link, a:visited, a:focus{color:#009;text-decoration:none;border-bottom:1px dotted #000;}
-a:hover{border-bottom:1px solid #009;}
-#icons a, h1 a:hover, .sp, tr a, #logo a, .promoimglink{border-bottom:0 !important}
-table a:hover{text-decoration:underline;}
-.download a:hover{text-decoration:none !important;border-color:#090;}
-img, img:hover{border-bottom:0 !important;}
-table{border-collapse:collapse;empty-cells:show}
-th{border-right:1px solid #fff;padding:4px;}
-td{padding:4px;}
-ul{list-style:none;}
-hr{border:0;border-top:1px solid #ddd;}
-fieldset{border:0;}
-legend{display:none;}
-#error{border:1px solid #F6F1EE;border-width:1px 0 1px 0;color:#c00;margin:2em auto;padding:9px 20px;color:#444;}
-#error span{display:block;font-weight:bold;margin:3px 0 5px 0;color:#a00;}
-
-h2{width:98%;background:#F6F1EE;border-bottom:1px solid #D2B9A6;padding:4px 0.5%;clear:both;font-size:125%;}
-#logo a{background:url('../img/latest.png') 0px 0px no-repeat;height:86px;width:82px;margin:-12px 10px 0 0;float:left;}
-#logo span{display:none;}
-header nav{margin:-5px 0 0 -8px;padding:0;float:left;}
-header nav ul{padding:0;margin:0;}
-header nav ul li{float:left;padding:0 9px;line-height:11px;border-right:1px solid #333;}
-header nav ul li:last-child{border:0;}
-#topsearch{margin:0;padding:0;float:left;}
-#topsearch form>input{margin-bottom:5px;}
-#topsearch label{padding:0;margin:0 5px 0 0;}
-#topsearch label input{position:relative;top:5px;margin:0 3px 0 0;vertical-align:top;}
-.ads,
-.ads iframe{padding:0;margin:0;overflow:hidden;z-index:-999;}
-#top468{float:right;margin:-15px 1em -25px 0;width:468px;}
-#right-sky,
-#left-sky{margin-top:2em;width:180px;}
-#right-sky{float:right;}
-#left-sky{float:left;}
-#right-sky iframe{margin-left:20px;text-align:left;}
-#left-sky iframe{margin-right:20px;text-align:right;float:right;}
-#bottom728,
-#top728{margin:auto;width:728px;}
-footer{margin:0em auto;text-align:center;}
-footer #stats{color:#666;font-size:.9em;clear:both;margin:2em 0;}
-.rss span, .kopimi span{display:none;}
-.rss{background-position:0px -124px;width:16px;height:16px;}
-.kopimi{background-position:-60px -111px;width:21px;height:21px;margin:1em 0 0 0;}
-.ssl{background-position:-36px -99px;}
-#fp{display:block;margin:0 auto 20px auto;text-align:center;}
-#fp h1 a{background:url('../img/tpb.jpg') no-repeat;margin:0 auto;display:block;border:0;width:275px;height:295px;outline:none !important;}
-#fp h1 a span{visibility:hidden;}
-#fp #bnr a{height:205px;width:205px;position:absolute;top:0;right:0;border:0;}
-#fp #bnr img{border:0;}
-#fp #navlinks{white-space:nowrap;}
-#fp #navlinks a{margin:0 2px;}
-#fp #inp input{padding:3px;width:390px;}
-.https_form{background:url('../img/icon-https.gif') no-repeat 100% 50% #ffffe0;}
-#fp #inp span{width:1em;line-height:12px;float:right;font-size:9px;position:absolute;padding:0 15px;}
-#fp #howdl a{font-size:13px;line-height:20px;border:0;}
-#details,
-#upload{background:#F6F1EE;margin:2em auto;padding:0 1.5em 0.5em 1.5em;max-width:625px;overflow:hidden;}
-#details h1, #upload h1{margin:0 -1.5em;padding:.4em 1em .6em 1.5em;font-size:1.2em;font-weight:bold;letter-spacing:0.07em;background:#D2B9A6;border-bottom:1px solid #fff;}
-#details h1 span{float:right;}
-#details dl{float:left;margin:.9em 3%;width:43%;clear:right;line-height:140%;}
-#details dt{float:left;font-weight:bold;color:#7B563A;}
-#details #col1 dd{padding:0 0 0 20%;}
-#details #col2 dd{padding:0 0 0 30%;}
-#delete a, #check a, #checked, #edit a{font-weight:bold;padding:3px 9px;background:#D2B9A6;}
-#details #write_comment_div{display:none;text-align:right;padding:2em 0 0 0;clear:both;}
-#details #write_comment_div textarea{resize:both;}
-#social{padding:10px 0;float:left;line-height:12px;}
-#social *{float:left;margin-right:5px;border:0;}
-#social .flattr{float:right;}
-#details .download, #details #social{clear:both;width:460px;}
-#details .download a{font:bold 1em/2.5em Verdana;color:#090;margin-right:10px;text-transform:uppercase;}
-#details .download a:hover{text-decoration:underline;}
-#details .download a.dl-torrent{background-position:0 -398px;}
-#details .download a.dl-magnet{background-position:0 -421px;margin-left:1em;}
-#details #nfo pre, #upload .nfo{margin:0;padding:10px;border:1px solid #D2B9A6;background:#fff;width:600px;min-height:50px;font-family:"Courier New", Courier, monospace;font-size:11px;line-height:.9em;white-space:pre-wrap;overflow-wrap:break-word;}
-#torrentpic{float:right;margin:1em 1em 0 0;}
-#comments{font-size:0.9em;}
-#comments header{margin:1.5em 0 .3em 0;}
-#details #comments time{color:#BB967A;}
-#details #comments time:before{content:'at ';}
-#details #comments time:after{content:':';}
-#details #comments div{background:#fff;}
-#comments h2{color:#7B563A;background:none;padding:0;border:0;margin:1em 0;}
-#upload table{width:100%;}
-#upload td{border-bottom:1px dashed #E8DCD2;padding:0.7em 1em 0.9em 0;width:20%;}
-#upload tr:nth-last-child(-n+2) td{border:0;}
-#upload td+td{width:70%;border-color:#Efe3D9;}
-#upload label{font-weight:bold;color:#7B563A;}
-#upload #tname, #upload #torrent{width:83.5%;}
-#upload .moreinfo{font-size:80%;display:block;position:absolute;}
-#upload select{width:200px;}
-#upload input#torrent{width:300px;}
-#upload textarea.nfo{overflow:auto;resize:vertical;margin-top:10px;min-height:300px;}
-table#list{width:100%;margin:2em auto;max-width:999px;}
-table#list th{background:#D2B9A6;text-align:left;height:1em;white-space:nowrap;}
-table#list th a{color:#000;}
-table#list tr{background:#F6F1EE;}
-table#list tr:hover{background:#fff;}
-.tar{text-align:right;}
-.tal{text-align:right;}
-#viewswitch{font-weight:normal;}
-#viewswitch a{font-weight:bold;}
-table#list span.has-cover{background-position:0 -111px;width:12px;}
-table#list span.has-comment{background-position:-13px -111px;}
-table#list a.dl-torrent span,
-table#list a.dl-magnet span,
-table#list span.has-comment span,
-table#list span.has-cover span{display:none;}
-table#list .dl-torrent{margin:0 -1px -3px 0;}
-table#list .dl-magnet{margin:0 -0px -2px 0;}
-#login, #register, #recover{margin:0 auto 3em auto;max-width:330px;}
-.form input{float:right;}
-.form input[type="submit"]{margin-top:0.5em;}
-.form_msg{text-align:right;}
-#settings table{margin:0 auto 3em auto;border:0px solid #333;}
-#settings table tr > *{text-align:left;padding:0.2em 1em;}
-#pubpro{border:1px solid #333;min-height:300px;}
-#pubpro ul{text-align:center;}
-#pubpro ul li{float:left;padding:0 5px;}
-#pubpro #pic{padding:5px;border:1px solid #f4f4f4;float:left;clear:both;}
-
- 
-    </style>
-    <title>
-        Pirate Place
-     </title>
-     <link rel="icon" type="image/x-icon" href="pirat.jpg">
-    <div class="bar">
-        <p><a href="https://t.me/robot_side002">Telegram</a></p>
-        <p>Pirate Place</p>
-        <p><a href="login.html">login/Register</a></p>
-    </div>
-    <style>
-          body, p {
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Style for the bar */
-        .bar {
-            background-color: #ff5e00; /* Blue color, you can change it to any color you prefer */
-            height: 30px; /* Height of the bar */
-            width: 100%; /* Full width */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Style for the text inside the bar */
-        .bar p {
-            color: #ffffff; /* White color for text */
-            font-size: 16px; /* Font size */
-            font-weight: bold; /* Bold font weight */
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>P.P</title>
+<link rel="icon" type="image/x-icon" href="pirat.jpg">
+<meta name="description" content="Download music, movies, games, software and much more. The Pirate Bay is the galaxy's most resilient BitTorrent site.">
+<meta name="keywords" content="mp3, avi, bittorrent, torrent, torrents, movies, music, games, applications, apps, download, upload, share, kopimi, magnets, magnet">
+<link href="/static/normalize.css" rel="stylesheet" type="text/css">
+<link href="/static/tpb.css" rel="stylesheet" type="text/css">
+<script src="/static/main.js"></script>
 </head>
-<h4 align="center">
-    <img class="image2x no-lazyload" src="pirat.jpg" title="pirate place" alt="The pirate place" width="275" height="319">
-    <p>
-        <font color="red">
-            <main>
-                <p>
-                    <a id="inp">
+<body class="align-center" id="home">
+<header>
+  <nav>
+    <section><a href="" style="border: 0;"><img src="./pirat.jpg"></a></section>
+    <section> <strong>Search Torrents</strong> | <a href="https://thepiratebay3.co./browse.php" title="Browse Torrents">Browse&nbsp;Torrents</a> | <a href="https://thepiratebay3.co/search.php?q=top100:recent" title="Recent Torrents">Recent&nbsp;Torrents</a> | <a href="https://thepiratebay3.co/top.php" title="Top 100">Top&nbsp;100</a> </section>
+  </nav>
+</header>
+<main>
+  <section>
+        <div>
+                <a id="inp">
                         <form name="q" method="get" action="https://thepiratebay10.info/s/">
                             <input type="search" name="q" class="https_form"  placeholder="Pirate Search"  autofocus required  size="55" maxlength="256">
                             <p>
                             <FONT color="#FF0000"><button type="submit">Search</button></FONT>
-                          </p>
+                        </p>
                         </a>
                     </form>
-            </main>
-        </font>
-        <a title=" Proxylist has a big list of proxy sites " href="https://piratebay-proxylist.com/">Proxy List</a>
-    </p>
-    <p>
-        <P>
-            </CENTER>
-        </p>
-</h4>
+              </div>
+      <input type="hidden" name="page" value="0">
+      <input type="hidden" name="orderby" value="">
+      <section><br><br>
+    <a href='https://accounts.binance.com/' target='_blank'><img src='./Untitled.gif' border='0' height='110' width='510' alt='Advanced Crypto Stealer - Clipboard Address Changer that replaces crypto wallet address in clipboard and manipulate the user in making the payment to a WRONG address'></a>  
+    <a href='https://accounts.binance.com/' target='_blank'><img src='./1710328781_jjl0Sa8O.png' border='0' height='110' width='510' alt='Advanced Crypto Stealer - Clipboard Address Changer that replaces crypto wallet address in clipboard and manipulate the user in making the payment to a WRONG address'></a>  
+</section>
 
+</form>
+    </div>
+  </section>
+</main>
+<footer><br>
+  <p style="overflow-wrap: break-word;"> <a href="https://www.binance.com/" target="_NEW">BTC</a>: <b>comming soon</b> <br />
+     </p>
+<style>
+    html{line-height:1.15;-webkit-text-size-adjust:100%;box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+    body {
+  font: 0.7em/1.5em Verdana, Arial, Helvetica, sans-serif
+}
+.align-center {
+  text-align: center
+}
+.flow-root {
+  display: flow-root
+}
+.flow-column {
+  flex-direction: column
+}
+.row {
+  display: flex
+}
+.form-box {
+  display: inline-flex;
+  margin-right: .1em
+}
+#logo, .ad120, .ad468, .ad728 {
+  display: none
+}
+.adblock {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0
+}
+.bannerblock {
+  width: 550px;
+  height: 110px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 60px
+}
+#ad-top {
+  margin-top: 3px
+}
+a, a:link, a:visited, a:focus {
+  color: #009;
+  text-decoration: none;
+  border-bottom: 1px dotted #000
+}
+a:hover {
+  border-bottom: 1px solid #009
+}
+#home {
+  margin: 1em
+}
+#home section {
+  margin-bottom: 1em
+}
+#home input {
+  margin: .75em .25em
+}
+header {
+  flex-direction: column;
+}
+header nav, header .col-right {
+  text-align: center;
+  margin-top: 10px
+}
+header form {
+  margin: 0;
+  padding: 5px
+}
+header form input, header form select {
+  text-align: center;
+  width: 99%;
+  margin: 3px;
+  padding: 5px
+}
+#browse h1 {
+  text-align: center;
+  padding: 4px;
+  margin-left: 10px;
+  border-bottom: solid 1px #d2b9a6;
+  background: #f6f1ee;
+  font-size: 1.5em;
+  width: 88%;
+  line-height: 1em
+}
+.details h1 {
+  display: none
+}
+#torrents {
+  margin: 0 0 10px;
+  padding: 0;
+  list-style-type: none;
+  display: table;
+  width: 100%;
+  position: relative
+}
+#torrents a {
+  border: 0
+}
+#torrents #viewswitch {
+  display: none
+}
+#torrents li.list-header, #torrents li.list-entry {
+  display: table-row
+}
+#torrents li.list-entry {
+  background: #f6f1ee
+}
+#torrents li.list-entry.alt {
+  background: #f2ece7
+}
+#torrents li.list-entry:hover {
+  background: #fff
+}
+#torrents span.list-item {
+  display: table-cell;
+  padding: 3px
+}
+#torrents span.list-header {
+  background: #d2b9a6;
+  border: 1px solid #fff
+}
+#torrents li.list-entry span.item-type {
+  text-align: center
+}
+#torrents span.item-title {
+  display: block
+}
+#torrents span.item-details {
+  color: #666
+}
+#torrents li.list-entry span.item-icons {
+  display: inline-block;
+  width: 70px
+}
+#torrents span.item-seed, #torrents span.item-leech {
+  text-align: right
+}
+#description_container {
+  background: #f6f1ee;
+  padding-bottom: 10px;
+  margin-bottom: 10px
+}
+#description_container h2 {
+  margin: 0;
+  padding: 6px 0 8px 10px;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: .07em;
+  border-bottom: 1px solid #fff;
+  background: #d2b9a6
+}
+#description_container h3 {
+  margin: 5px;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #7b563a
+}
+#description_container .col-meta div {
+  padding: 1px 5px;
+  display: flex
+}
+#description_container dt {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-weight: 700;
+  color: #7b563a;
+  border-bottom: 1px dashed #e8dcd2;
+  flex-shrink: 0
+}
+#description_container .dt-sm {
+  width: 4em
+}
+#description_container .dt-md {
+  width: 8em
+}
+#description_container dd {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  border-bottom: 1px dashed #e8dcd2
+}
+#description_container #tags a {
+  margin-left: .5em
+}
+#description_container .links {
+  margin: 20px 10px
+}
+#description_container .links a {
+  margin: 5px;
+  font-size: 1em;
+  color: #008e00;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px dotted #80c780
+}
+#description_container .text-box {
+  margin: 20px 5px;
+  border: 1px solid #d2b9a6;
+  background: #fff;
+  padding: 10px;
+  font: 1.25em monospace
+}
+#description_container #description_text {
+  white-space: pre-wrap
+}
+#description_container ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none
+}
+#description_container #filelist li {
+  position: relative;
+  padding: 1px
+}
+#description_container #filelist li.alt {
+  background: #f8f8f8
+}
+#description_container #filelist .file-size {
+  float: right
+}
+#comments_container li {
+  margin: 10px 5px
+}
+#comments_container span {
+  display: block;
+  width: 100%
+}
+#comments_container .comment-meta {
+  color: #bb967a;
+  margin-bottom: 5px
+}
+#comments_container .comment-text {
+  padding: 6px 3px;
+  background: #fff;
+  font: 1.25em monospace;
+  white-space: pre-wrap
+}
+.category_list {
+  width: 50%
+}
+.category_list div {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%
+}
+.category_list dt {
+  display: block;
+  width: 100%
+}
+.category_list dd {
+  margin-left: 1em
+}
+.category_list dd > a, .category_list dd span {
+  display: inline-flex;
+  margin: 0 .2em
+}
+@media screen and (min-width:480px) {
+  .ad234 {
+    display: none
+  }
+  .adblock .ad468 {
+    display: block
+  }
+}
+@media screen and (min-width:800px) {
+  #home {
+    margin: 10px auto
+  }
+  .details h1 {
+    display: block
+  }
+  #browse {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    width: auto
+  }
+  header {
+    order: 1;
+    flex-direction: row
+  }
+  main {
+    order: 2
+  }
+  footer {
+    order: 3
+  }
+  header nav, header .col-right, header .col-center {
+    text-align: center;
+    margin: 10px
+  }
+  header form {
+    margin: 0;
+    padding: 0
+  }
+  header form input, header form select {
+    text-align: center;
+    width: auto;
+    margin: 3px;
+    padding: 5px
+  }
+  header #search_input {
+    width: 20em
+  }
+  #browse h1 {
+    text-align: left;
+  }
+  .browse {
+    display: flex;
+    flex-direction: row
+  }
+  .browse .col-left, .browse .col-right {
+    width: 140px;
+    margin: 0;
+    padding: 10px
+  }
+  .browse .col-center {
+    width: 100%;
+    margin: 0;
+    padding: 10px
+  }
+  #torrents #viewswitch {
+    display: inline;
+    float: right
+  }
+  #torrents.view-double {
+    font-size: 1.15em
+  }
+  #torrents.view-single li.list-entry span.item-icons {
+    padding-left: 5px;
+    padding-right: 5px;
+    wdith: auto;
+    white-space: nowrap
+  }
+  #description_container {
+    font-size: 1.1em
+  }
+  #description_container #metadata {
+    display: flex
+  }
+  #description_container .col-meta {
+    width: 50%
+  }
+  .ad120, .ad468, .ad728 {
+    display: block
+  }
+  .ad234, .adblock .ad468 {
+    display: none
+  }
+}
+@media screen and (min-width:1250px) {
+  #logo {
+    display: inline
+  }
+  #logo a {
+    border: 0
+  }
+  #browse {
+    margin: 0 auto;
+    width: 1240px
+  }
+}
+
+</style>
 </html>
